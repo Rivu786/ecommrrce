@@ -1,0 +1,17 @@
+node_modules
+.cursor/mcp.json
+.turbo
+dist
+.next
+.expo
+*.tsbuildinfo
+.env
+.env.local
+*.log
+coverage
+.DS_Store
+uploads
+tmp
+apps/api/prisma/*.db
+apps/delivery/.expo
+apps/delivery/node_modules

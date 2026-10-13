@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "context7-mcp": {
+      "source": "upstash/context7",
+      "sourceType": "github",
+      "skillPath": "skills/context7-mcp/SKILL.md",
+      "computedHash": "954151658cec03361a75b712d8611a551f4c929976b0540799bce84d900a351f"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "93f53fd1c0352d3d7ec17b8f73d7351bf76f4821e55d123c9d2abc2c53ba48e4"
+    },
+    "motion-framer": {
+      "source": "freshtechbro/claudedesignskills",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/motion-framer/SKILL.md",
+      "computedHash": "b18cf4fbfd179942f73d770f3f1d4597ea512fbdf67b2aa03f01cfd726558b6e"
+    },
+    "unity-animation": {
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/unity/unity-animation/SKILL.md",
+      "computedHash": "6ed37e90206e5534f2bc1e3c5a5176cfdf0a4b1b2ccfbf0a935d618122a15721"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474"
+    }
+  }
+}

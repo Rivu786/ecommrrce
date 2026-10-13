@@ -1,0 +1,29 @@
+{
+  "name": "OmniCommerce Driver",
+  "slug": "omnicommerce-driver",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "userInterfaceStyle": "dark",
+  "splash": {
+    "resizeMode": "contain",
+    "backgroundColor": "#0B1220"
+  },
+  "ios": {
+    "supportsTablet": true,
+    "bundleIdentifier": "in.asifur.omnicommerce.driver",
+    "infoPlist": {
+      "NSLocationWhenInUseUsageDescription": "Share location while delivering jobs."
+    }
+  },
+  "android": {
+    "adaptiveIcon": {
+      "backgroundColor": "#0B1220"
+    },
+    "package": "in.asifur.omnicommerce.driver",
+    "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
+  },
+  "extra": {
+    "apiUrl": "http://localhost:4000/api/v1",
+    "tenantId": "demo"
+  }
+}

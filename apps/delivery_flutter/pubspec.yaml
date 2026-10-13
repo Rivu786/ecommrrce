@@ -1,0 +1,13 @@
+name: omnicommerce_driver
+description: Flutter driver app for OmniCommerce nearby jobs.
+publish_to: "none"
+version: 0.1.0
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2
+  shared_preferences: ^2.3.3
+flutter:
+  uses-material-design: true
