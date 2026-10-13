@@ -9,11 +9,12 @@ import { intersectPack } from '../auth/permission.guard';
 export class StaffService {
   constructor(private readonly prisma: PrismaService) {}
 
-  list(tenantId: string) {
-    return this.prisma.user.findMany({
+  async list(tenantId: string) {
+    const users = await this.prisma.user.findMany({
       where: { tenantId, roles: { some: { role: { code: { not: RoleCode.CUSTOMER } } } } },
       include: { roles: { include: { role: true } }, tenantRoles: { include: { role: true } } },
     });
+    return users.map(({ passwordHash: _passwordHash, ...user }) => user);
   }
 
   listRoles(tenantId: string) {

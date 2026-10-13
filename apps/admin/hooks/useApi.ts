@@ -40,7 +40,7 @@ export function useApiList<T = Record<string, any>>(
       })
       .catch((err: unknown) => {
         if (cancelled) return;
-        const message = err instanceof ApiError ? err.message : 'Failed to load data';
+        const message = err instanceof ApiError ? err.message : err instanceof Error && err.message ? err.message : 'Failed to load data';
         setError(message);
         setRows([]);
         setRaw(null);
@@ -77,7 +77,7 @@ export function useApiData<T = unknown>(path: string | null) {
       })
       .catch((err: unknown) => {
         if (cancelled) return;
-        setError(err instanceof ApiError ? err.message : 'Failed to load data');
+        setError(err instanceof ApiError ? err.message : err instanceof Error && err.message ? err.message : 'Failed to load data');
         setData(null);
       })
       .finally(() => {

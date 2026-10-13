@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import {
   getAuthToken,
   getSessionId,
+  productImage,
   storeApi,
   type ProductDetail,
 } from '@/lib/api';
@@ -75,7 +76,7 @@ export default function ProductDetailPage() {
     );
   }
 
-  const image = product.media?.[0]?.url;
+  const image = productImage(product)?.url;
 
   return (
     <div className="shell section">

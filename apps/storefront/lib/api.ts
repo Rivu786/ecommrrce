@@ -95,6 +95,8 @@ export type HomepageSection = {
   configJson?: Record<string, unknown>;
 };
 
+export type ProductImage = { url: string; alt?: string | null };
+
 export type ProductListItem = {
   id: string;
   name: string;
@@ -107,8 +109,24 @@ export type ProductListItem = {
     price: number | string;
     compareAtPrice?: number | string | null;
   }>;
-  media?: Array<{ url: string; alt?: string | null }>;
+  images?: ProductImage[];
+  media?: ProductImage[];
 };
+
+export function productImage(product: { images?: ProductImage[]; media?: ProductImage[] }) {
+  return product.images?.[0] || product.media?.[0];
+}
+
+/** Catalog list endpoints return `{ data, nextCursor }`. Older callers used `items`. */
+export function catalogPage<T>(
+  data: T[] | { items?: T[]; data?: T[]; nextCursor?: string | null } | null | undefined,
+): { items: T[]; nextCursor: string | null } {
+  if (Array.isArray(data)) return { items: data, nextCursor: null };
+  return {
+    items: data?.items ?? data?.data ?? [],
+    nextCursor: data?.nextCursor ?? null,
+  };
+}
 
 export type ProductDetail = ProductListItem & {
   description?: string | null;

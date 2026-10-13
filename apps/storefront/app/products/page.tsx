@@ -2,17 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { ProductCard } from '@/components/ProductCard';
-import {
-  storeApi,
-  type ProductListItem,
-} from '@/lib/api';
-
-function normalize(
-  data: Awaited<ReturnType<typeof storeApi.products>>,
-): { items: ProductListItem[]; nextCursor?: string | null } {
-  if (Array.isArray(data)) return { items: data, nextCursor: null };
-  return { items: data.items ?? [], nextCursor: data.nextCursor };
-}
+import { catalogPage, storeApi, type ProductListItem } from '@/lib/api';
 
 export default function ProductsPage() {
   const [items, setItems] = useState<ProductListItem[]>([]);
@@ -30,7 +20,7 @@ export default function ProductsPage() {
         cursor: opts?.cursor,
         q: opts?.query || undefined,
       });
-      const page = normalize(data);
+      const page = catalogPage<ProductListItem>(data);
       setItems((prev) => (opts?.reset ? page.items : [...prev, ...page.items]));
       setCursor(page.nextCursor ?? null);
     } catch (err) {

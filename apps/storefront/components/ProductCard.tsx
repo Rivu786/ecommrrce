@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { ProductListItem } from '@/lib/api';
+import { productImage, type ProductListItem } from '@/lib/api';
 
 function formatPrice(value?: number | string | null) {
   if (value === undefined || value === null || value === '') return '—';
@@ -14,14 +14,14 @@ function formatPrice(value?: number | string | null) {
 
 export function ProductCard({ product }: { product: ProductListItem }) {
   const price = product.variants?.[0]?.price;
-  const image = product.media?.[0]?.url;
+  const image = productImage(product);
 
   return (
     <Link href={`/products/${product.slug}`} className="product-card">
       <div className="media">
         {image ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={image} alt={product.media?.[0]?.alt || product.name} />
+          <img src={image.url} alt={image.alt || product.name} />
         ) : (
           <span>No image</span>
         )}

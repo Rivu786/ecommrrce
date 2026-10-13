@@ -1,13 +1,6 @@
 import Link from 'next/link';
-import { storeApi, type HomepageSection, type ProductListItem } from '@/lib/api';
+import { catalogPage, storeApi, type HomepageSection, type ProductListItem } from '@/lib/api';
 import { ProductCard } from '@/components/ProductCard';
-
-function normalizeProducts(
-  data: Awaited<ReturnType<typeof storeApi.products>>,
-): ProductListItem[] {
-  if (Array.isArray(data)) return data;
-  return data.items ?? [];
-}
 
 export default async function HomePage() {
   let sections: HomepageSection[] = [];
@@ -19,7 +12,7 @@ export default async function HomePage() {
       storeApi.products({ take: 8 }),
     ]);
     sections = Array.isArray(home) ? home : [];
-    products = normalizeProducts(catalog);
+    products = catalogPage<ProductListItem>(catalog).items;
   } catch {
     sections = [];
     products = [];
