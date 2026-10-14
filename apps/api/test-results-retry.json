@@ -1,0 +1,42 @@
+﻿[
+    {
+        "id":  "TC-PAY-001",
+        "status":  "PASS",
+        "actual":  "QR checkout ok order="
+    },
+    {
+        "id":  "TC-PAY-002",
+        "status":  "PASS",
+        "actual":  "UTR submitted"
+    },
+    {
+        "id":  "TC-PAY-003",
+        "status":  "FAIL",
+        "actual":  "500 "
+    },
+    {
+        "id":  "TC-PAY-004",
+        "status":  "FAIL",
+        "actual":  "400 "
+    },
+    {
+        "id":  "TC-ORD-002",
+        "status":  "FAIL",
+        "actual":  "No order"
+    },
+    {
+        "id":  "TC-BILL-001",
+        "status":  "BLOCKED",
+        "actual":  "No order"
+    },
+    {
+        "id":  "TC-DRV-001",
+        "status":  "PASS",
+        "actual":  "Driver online with isOnline=true; jobs listable"
+    },
+    {
+        "id":  "TC-SUB-001",
+        "status":  "FAIL",
+        "actual":  "HTTP 401 "
+    }
+]

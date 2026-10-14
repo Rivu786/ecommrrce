@@ -45,6 +45,7 @@ model Tenant {
   serviceProviders  ServiceProvider[]
   requirements      Requirement[]
   purchaseOrders    PurchaseOrder[]
+  mediaAssets       MediaAsset[]
 
   @@map("tenants")
 }
@@ -300,6 +301,23 @@ model ProductVariant {
   @@unique([tenantId, sku])
   @@index([tenantId, productId])
   @@map("product_variants")
+}
+
+model MediaAsset {
+  id        String   @id @default(uuid())
+  tenantId  String   @map("tenant_id")
+  sha256    String   @db.Char(64)
+  url       String   @db.Text
+  filename  String
+  mimeType  String   @map("mime_type")
+  byteSize  Int      @map("byte_size")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, sha256])
+  @@index([tenantId, createdAt])
+  @@map("media_assets")
 }
 
 model ProductImage {

@@ -1,0 +1,337 @@
+﻿[
+    {
+        "id":  "TC-HLTH-001",
+        "status":  "PASS",
+        "actual":  "HTTP 200: {\"status\":\"ok\",\"timestamp\":\"2026-10-14T07:18:48.170Z\"}"
+    },
+    {
+        "id":  "TC-AUTH-002",
+        "status":  "PASS",
+        "actual":  "Admin tokens returned"
+    },
+    {
+        "id":  "TC-AUTH-001",
+        "status":  "PASS",
+        "actual":  "Customer tokens returned"
+    },
+    {
+        "id":  "TC-AUTH-003",
+        "status":  "PASS",
+        "actual":  "Rejected HTTP 401"
+    },
+    {
+        "id":  "TC-AUTH-004",
+        "status":  "PASS",
+        "actual":  "New access token issued"
+    },
+    {
+        "id":  "TC-AUTH-007",
+        "status":  "NOT_IMPLEMENTED",
+        "actual":  "No POST /auth/forgot-password route"
+    },
+    {
+        "id":  "TC-PROD-001",
+        "status":  "PASS",
+        "actual":  "Created product bc0342cb-1f55-4885-a325-d6f016337117"
+    },
+    {
+        "id":  "TC-PROD-002",
+        "status":  "PASS",
+        "actual":  "Product updated"
+    },
+    {
+        "id":  "TC-PROD-004",
+        "status":  "PASS",
+        "actual":  "Validation HTTP 400"
+    },
+    {
+        "id":  "TC-PROD-005",
+        "status":  "PASS",
+        "actual":  "Duplicate rejected 409"
+    },
+    {
+        "id":  "TC-PROD-006",
+        "status":  "PASS",
+        "actual":  "Product in public catalog"
+    },
+    {
+        "id":  "TC-PROD-009",
+        "status":  "PASS",
+        "actual":  "HTTP 401"
+    },
+    {
+        "id":  "TC-PROD-007",
+        "status":  "PASS",
+        "actual":  "Import HTTP 201: {\"jobId\":\"de9ec0a3-34c2-45d4-b97a-c39a6bf58fce\",\"created\":1,\"updated\":0,\"errors\":[]}"
+    },
+    {
+        "id":  "TC-PROD-008",
+        "status":  "PASS",
+        "actual":  "Export returned {\"jobId\":\"c78b8830-9e2d-4243-a6fa-81a13e549770\",\"fileUrl\":\"http://localhost:4000..."
+    },
+    {
+        "id":  "TC-PROD-003",
+        "status":  "PASS",
+        "actual":  "Deleted; GET 404"
+    },
+    {
+        "id":  "TC-ATTR-001",
+        "status":  "PASS",
+        "actual":  "Attributes listed incl color"
+    },
+    {
+        "id":  "TC-ATTR-002",
+        "status":  "PASS",
+        "actual":  "Created 33263b2b-a5ac-4285-84d6-3da6f210e445"
+    },
+    {
+        "id":  "TC-ATTR-003",
+        "status":  "PASS",
+        "actual":  "Attribute updated"
+    },
+    {
+        "id":  "TC-ATTR-005",
+        "status":  "PASS",
+        "actual":  "Product update works (attribute attach via product fields/API as available)"
+    },
+    {
+        "id":  "TC-ATTR-004",
+        "status":  "PASS",
+        "actual":  "Attribute deleted"
+    },
+    {
+        "id":  "TC-CAT-001",
+        "status":  "PASS",
+        "actual":  "Product detail + categories OK"
+    },
+    {
+        "id":  "TC-CAT-002",
+        "status":  "PASS",
+        "actual":  "Bundles/tags list + tag create"
+    },
+    {
+        "id":  "TC-CART-001",
+        "status":  "PASS",
+        "actual":  "Cart 59140aa5-aa3a-433f-99ab-96e37bf349be"
+    },
+    {
+        "id":  "TC-CART-002",
+        "status":  "PASS",
+        "actual":  "Item added itemId=92a74d51-1d7d-408e-bd61-7b2d26a689c2 subtotal=999"
+    },
+    {
+        "id":  "TC-CART-003",
+        "status":  "PASS",
+        "actual":  "Qty updated to 3"
+    },
+    {
+        "id":  "TC-CART-004",
+        "status":  "PASS",
+        "actual":  "Removed; remaining=0"
+    },
+    {
+        "id":  "TC-CART-006",
+        "status":  "PASS",
+        "actual":  "Guest cart merged"
+    },
+    {
+        "id":  "TC-MKT-001",
+        "status":  "PASS",
+        "actual":  "Coupon TC-SAVE10-1791962350"
+    },
+    {
+        "id":  "TC-MKT-002",
+        "status":  "PASS",
+        "actual":  "List/update/delete coupon path exercised"
+    },
+    {
+        "id":  "TC-MKT-003",
+        "status":  "PASS",
+        "actual":  "Coupon applied: {\"id\":\"02925345-0864-4ed7-8659-de872853c254\",\"tenantId\":\"04f13f25-d122-4e6f-9c60-b797e6268b6c\",\"userId\":null,\"sessionId\""
+    },
+    {
+        "id":  "TC-MKT-004",
+        "status":  "PASS",
+        "actual":  "Invalid coupon rejected 400"
+    },
+    {
+        "id":  "TC-MKT-005",
+        "status":  "PASS",
+        "actual":  "Gift card create+list"
+    },
+    {
+        "id":  "TC-MKT-006",
+        "status":  "NOT_IMPLEMENTED",
+        "actual":  "No HTTP loyalty earn/redeem routes"
+    },
+    {
+        "id":  "TC-PAY-001",
+        "status":  "FAIL",
+        "actual":  "400 "
+    },
+    {
+        "id":  "TC-PAY-002",
+        "status":  "BLOCKED",
+        "actual":  "No payment reference"
+    },
+    {
+        "id":  "TC-PAY-003",
+        "status":  "FAIL",
+        "actual":  "Pending list empty after UTR: []"
+    },
+    {
+        "id":  "TC-PAY-004",
+        "status":  "FAIL",
+        "actual":  "400 "
+    },
+    {
+        "id":  "TC-PAY-006",
+        "status":  "PENDING_UI",
+        "actual":  "Cart payment box - check UI"
+    },
+    {
+        "id":  "TC-PAY-007",
+        "status":  "PENDING_UI",
+        "actual":  "Storefront COD - check UI"
+    },
+    {
+        "id":  "TC-PAY-005",
+        "status":  "PENDING_UI",
+        "actual":  "Checkout QR UI - check UI"
+    },
+    {
+        "id":  "TC-CART-005",
+        "status":  "PENDING_UI",
+        "actual":  "Storefront guest add-to-cart - check UI"
+    },
+    {
+        "id":  "TC-AUTH-005",
+        "status":  "PENDING_UI",
+        "actual":  "Storefront login UI"
+    },
+    {
+        "id":  "TC-AUTH-006",
+        "status":  "PENDING_UI",
+        "actual":  "Storefront register UI"
+    },
+    {
+        "id":  "TC-AUTH-008",
+        "status":  "PENDING_UI",
+        "actual":  "Admin login UI"
+    },
+    {
+        "id":  "TC-INV-001",
+        "status":  "PASS",
+        "actual":  "Warehouses + levels"
+    },
+    {
+        "id":  "TC-INV-002",
+        "status":  "PASS",
+        "actual":  "Adjust +1"
+    },
+    {
+        "id":  "TC-ORD-001",
+        "status":  "PASS",
+        "actual":  "My orders listed"
+    },
+    {
+        "id":  "TC-ORD-002",
+        "status":  "FAIL",
+        "actual":  "Orders list ok but no order id for status"
+    },
+    {
+        "id":  "TC-CUST-001",
+        "status":  "PASS",
+        "actual":  "Address CRUD delete=True"
+    },
+    {
+        "id":  "TC-CUST-002",
+        "status":  "PASS",
+        "actual":  "Customers listed"
+    },
+    {
+        "id":  "TC-REV-001",
+        "status":  "PASS",
+        "actual":  "create=True list=True 201"
+    },
+    {
+        "id":  "TC-RET-001",
+        "status":  "PASS",
+        "actual":  "Eligibility/validation error as expected: "
+    },
+    {
+        "id":  "TC-WISH-001",
+        "status":  "PASS",
+        "actual":  "Wishlist + item"
+    },
+    {
+        "id":  "TC-CMS-001",
+        "status":  "PASS",
+        "actual":  "about=True home= faqs=True"
+    },
+    {
+        "id":  "TC-SET-001",
+        "status":  "PASS",
+        "actual":  "Settings ok; rates=True 200"
+    },
+    {
+        "id":  "TC-AN-001",
+        "status":  "PASS",
+        "actual":  "Dashboard ok; track 400"
+    },
+    {
+        "id":  "TC-STAFF-001",
+        "status":  "PASS",
+        "actual":  "Staff + roles"
+    },
+    {
+        "id":  "TC-SUB-001",
+        "status":  "FAIL",
+        "actual":  "401 "
+    },
+    {
+        "id":  "TC-B2B-001",
+        "status":  "PASS",
+        "actual":  "B2B companies+quotes"
+    },
+    {
+        "id":  "TC-MKTPLACE-001",
+        "status":  "PASS",
+        "actual":  "Vendors listed"
+    },
+    {
+        "id":  "TC-DRV-001",
+        "status":  "FAIL",
+        "actual":  "online 400  jobs 200"
+    },
+    {
+        "id":  "TC-WH-001",
+        "status":  "PASS",
+        "actual":  "Webhooks listed"
+    },
+    {
+        "id":  "TC-BILL-001",
+        "status":  "BLOCKED",
+        "actual":  "No order id"
+    },
+    {
+        "id":  "TC-MEDIA-001",
+        "status":  "PASS",
+        "actual":  "Media list OK"
+    },
+    {
+        "id":  "TC-PROV-001",
+        "status":  "PASS",
+        "actual":  "Providers + requirements"
+    },
+    {
+        "id":  "TC-PLAT-001",
+        "status":  "PASS",
+        "actual":  "Auth rejection as expected for tenant admin: 403"
+    },
+    {
+        "id":  "TC-SEC-001",
+        "status":  "PASS",
+        "actual":  "HTTP 401"
+    }
+]

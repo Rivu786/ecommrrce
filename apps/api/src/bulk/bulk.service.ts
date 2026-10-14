@@ -12,6 +12,25 @@ export class BulkService {
     private readonly storage: StorageService,
   ) {}
 
+  /** Skip a product image when that exact URL is already attached. */
+  async attachImage(tenantId: string, productId: string, imageUrl?: string) {
+    const url = imageUrl?.trim();
+    if (!url) return;
+    const existing = await this.prisma.productImage.findFirst({
+      where: { tenantId, productId, url },
+    });
+    if (existing) return;
+    await this.prisma.productImage.create({
+      data: {
+        id: randomUUID(),
+        tenantId,
+        productId,
+        url,
+        sortOrder: 0,
+      },
+    });
+  }
+
   async importProducts(tenantId: string, csvContent: string) {
     const job = await this.prisma.importExportJob.create({
       data: {
@@ -55,6 +74,7 @@ export class BulkService {
                 status: row.status || existing.status,
               },
             });
+            await this.attachImage(tenantId, existing.id, row.image_url || row.imageUrl);
             if (row.variant_sku && row.price) {
               await this.prisma.productVariant.upsert({
                 where: {
@@ -73,7 +93,7 @@ export class BulkService {
             }
             updated++;
           } else {
-            await this.prisma.product.create({
+            const createdProduct = await this.prisma.product.create({
               data: {
                 id: randomUUID(),
                 tenantId,
@@ -98,6 +118,7 @@ export class BulkService {
                   : undefined,
               },
             });
+            await this.attachImage(tenantId, createdProduct.id, row.image_url || row.imageUrl);
             created++;
           }
         } catch (e) {

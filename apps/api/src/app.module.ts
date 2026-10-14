@@ -28,6 +28,7 @@ import { DriverModule } from './driver/driver.module';
 import { AnalyticsModule } from './analytics/analytics.module';
 import { SettingsModule } from './settings/settings.module';
 import { BulkModule } from './bulk/bulk.module';
+import { MediaModule } from './media/media.module';
 import { MarketplaceModule } from './marketplace/marketplace.module';
 import { B2bModule } from './b2b/b2b.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
@@ -66,6 +67,7 @@ import { JobsModule } from './jobs/jobs.module';
     AnalyticsModule,
     SettingsModule,
     BulkModule,
+    MediaModule,
     MarketplaceModule,
     B2bModule,
     SubscriptionsModule,
